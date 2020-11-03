@@ -1,1 +1,1 @@
-# rgbd-salient-object-detection
+# RGB-D Salient Object Detection
