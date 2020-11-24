@@ -65,9 +65,9 @@ class RgbdSodDataset(Dataset):
 
     def _get_sample(self, index):
         # Utility method. Loads a single sample.
-        img_rgb = np.array(Image.open(self.list_fnames_rgb[index]).convert('RGB'))
-        img_gt = np.array(Image.open(self.list_fnames_gt[index]).convert('L'))
-        img_depth = np.array(Image.open(self.list_fnames_depth[index]).convert('L'))
+        img_rgb = Image.open(self.list_fnames_rgb[index]).convert('RGB')
+        img_gt = Image.open(self.list_fnames_gt[index]).convert('L')
+        img_depth = Image.open(self.list_fnames_depth[index]).convert('L')
         return Sample(img_rgb=img_rgb, img_depth=img_depth, img_gt=img_gt)
 
     def __len__(self):
