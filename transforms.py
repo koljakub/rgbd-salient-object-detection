@@ -11,6 +11,8 @@ from PIL import Image
 
 from dataset import Sample
 
+__all__ = ['Resize', 'RandomCrop', 'RandomHorizontalFlip', 'RandomRotation', 'GaussianNoise', 'ToTensor', 'Normalize']
+
 
 class BaseTransform(abc.ABC):
     """Abstract base class for image transformation functions.

@@ -7,6 +7,8 @@ from typing import List, Callable
 from PIL import Image
 from torch.utils.data import Dataset
 
+__all__ = ['Sample', 'RgbdSodDataset']
+
 
 class Sample:
     """The class represents a single sample from the corresponding SOD dataset.
