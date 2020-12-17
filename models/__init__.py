@@ -1,1 +1,1 @@
-from rgbd_net import RgbdNet
+from .rgbd_net import RgbdNet
