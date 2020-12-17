@@ -207,8 +207,8 @@ class RgbdNet(nn.Module):
         self.pred_layer = PredLayer()
 
     def forward(self, x):
-        img_rgb = x.img_rgb
-        img_depth = x.img_depth
+        img_rgb = x['img_rgb']
+        img_depth = x['img_depth']
         x = torch.cat((img_rgb, img_depth), 1)
         x = self.main_stream(x)
         return self.pred_layer(x)
