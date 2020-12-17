@@ -197,3 +197,18 @@ class PredLayer(nn.Module):
         x = self.enlayer(x)
         x = self.outlayer(x)
         return x
+
+
+class RgbdNet(nn.Module):
+
+    def __init__(self):
+        super().__init__()
+        self.main_stream = SingleStream(in_channel=4)
+        self.pred_layer = PredLayer()
+
+    def forward(self, x):
+        img_rgb = x.img_rgb
+        img_depth = x.img_depth
+        x = torch.cat((img_rgb, img_depth), 1)
+        x = self.main_stream(x)
+        return self.pred_layer(x)
